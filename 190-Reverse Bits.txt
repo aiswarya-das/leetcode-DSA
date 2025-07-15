@@ -1,0 +1,19 @@
+190. Reverse Bits
+
+Reverse bits of a given 32-bit unsigned integer.
+
+Example 1:
+Input:  n = 00000010100101000001111010011100  
+Output: 964176192  
+Explanation:
+The input binary string represents the unsigned integer 43261596.
+Reversing the bits gives 00111001011110000010100101000000,
+which equals 964176192 in decimal.
+
+Python Solution:
+
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        binary = bin(n)[2:].zfill(32)  # Convert to 32-bit binary string
+        binary = binary[::-1]          # Reverse the string
+        return int(binary, 2)          # Convert back to integer

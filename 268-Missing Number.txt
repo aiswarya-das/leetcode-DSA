@@ -1,0 +1,21 @@
+268. Missing Number
+
+Given an array `nums` containing `n` distinct numbers in the range [0, n],
+return the only number in the range that is missing from the array.
+
+Example 1:
+Input: nums = [3, 0, 1]
+Output: 2
+
+Explanation:
+n = 3, so the full range is [0, 1, 2, 3].
+2 is missing from the array.
+
+Python Solution:
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)                    # Total number of elements
+        s = n * (n + 1) // 2             # Sum of first n natural numbers (0 to n)
+        res = s - sum(nums)             # Subtract actual sum from expected sum
+        return res
